@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!-- 타임리프를 쓰기위해 xmlns 설정 -->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+</head>
+<body>
+<h1>타임리프 예제</h1>
+<!--#temporals.format() : LocalDate 타입인 오늘날짜를 MM-dd 포맷으로 변경-->
+<p th:text="${#temporals.format(today, 'MM-dd')}" />
+<!--th:object=”${person}” : 모델에서 받은 객체 중 person 키를 가진 객체의 데이터를 하위 태그에 지정 -->
+<div th:object="${person}">
+    <!--문자열 결합 시 |  사용합니다.-->
+    <p th:text="| 이름 : *{name} |" />
+    <p th:text="| 나이 : *{age} |" />
+    <p>취미</p>
+
+    <!--List의 경우 th : each 반복으로 하고 아래 예시로 봤을때 hobbies를 hobby에 담는다.-->
+    <ul th:each=" hobby : *{hobbies} " >
+        <li th:text="${hobby}"></li>
+        <!-- if문 쓰고 싶을때 사용법 사용법 -->
+        <span th:if="${hobby == '운동'}">(대표 취미)</span>
+    </ul>
+    <!--href 적용시 @{} 이런식으로 줌 -->
+    <a th:href="@{/api/articles/{id}(id=${person.id})}">글보기</a>
+
+</div>
+</body>
+</html>
