@@ -34,8 +34,8 @@
                     th:value="${article.content}" ></textarea>
 
             </section>
-        <button th:if="${article.id}==null" type="button" class="btn btn-primary btn-sm" id="modify-btn">수정</button>
-        <button th:if="${article.id}!=null" type="button" class="btn btn-secondary btn-sm" id="create-btn">등록</button>
+        <button th:if="${article.id}!=null" type="button" class="btn btn-primary btn-sm" id="modify-btn">수정</button>
+        <button th:if="${article.id}==null" type="button" class="btn btn-secondary btn-sm" id="create-btn">등록</button>
       </article>
     </div>
   </div>

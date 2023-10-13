@@ -22,7 +22,7 @@
         <section class="mb-5">
           <p class ="fs-5 mb-4" th:text="${article.content}" />
         </section>
-        <button type="button" id="modify-btn" th:onclick="|location.href='@{/new-articles?id={articleId}(articleId=${article.id})}'|" class="btn btn-primary btn-sm">수정페이지로 이동</button>
+        <button type="button" id="modify-btn" th:onclick="| location.href='@{/new-articles?id={articleId}(articleId=${article.id})}'|" class="btn btn-primary btn-sm">수정페이지로 이동</button>
         <button type="button" class="btn btn-secondary btn-sm" id="delete-btn">삭제</button>
       </article>
     </div>

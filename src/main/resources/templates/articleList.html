@@ -14,8 +14,7 @@
 </div>
 
 <div class="container">
-  <button type="button" id="create_btn" class="btn btn-dark btn-sm mb-3"
-  th:onclick="| loction.href='@{/new-articles}'|"> 글 목록</button>
+  <button type="button" id="create_btn" th:onclick="| location.href='@{/new-articles}'|" class="btn btn-dark btn-sm mb-3" > 글 등록</button>
   <div class="row_6" th:each ="item : ${articles}">
     <div class="card mb-3">
       <div class="card-header" th:text="${item.id}" />
